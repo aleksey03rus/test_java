@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 abstract class Animal {
-    String name;
-    int kal;
+   private String name;
+   private int kal;
 
     public String getName() {
         return name;
