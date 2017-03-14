@@ -7,12 +7,12 @@ public class Earth {
         ArrayList<Essens> arrayList = new ArrayList<>();
         Bear bear = new Bear();
         Elk elk = new Elk();
-        Rabbit ej = new Rabbit();
+        Rabbit rabbit = new Rabbit();
         Plant plant = new Plant();
         Wolf wolf = new Wolf();
         arrayList.add(0, bear);
         arrayList.add(1, elk);
-        arrayList.add(2, ej);
+        arrayList.add(2, rabbit);
         arrayList.add(3, wolf);
         arrayList.add(4, plant);
 
