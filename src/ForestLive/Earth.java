@@ -17,7 +17,7 @@ public class Earth {
         arrayList.add(4, plant);
 
         if (arrayList.get(0) instanceof Bear) {
-            if (bear.attack(arrayList.get(0), arrayList.get(3))){ // ПХД ТУТ НЕ ПРАВИЛЬНО ОБРАЩАТЬСЯ К BEAR
+            if (bear.attack(arrayList.get(0), arrayList.get(3))){ 
 
             }
         }
