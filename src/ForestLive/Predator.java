@@ -31,6 +31,6 @@ class Predator extends Animal {
     }
 
     public boolean eat(Essens Eater, Essens food) {
-        
+        if ()
     }
 }
