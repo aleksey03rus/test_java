@@ -1,15 +1,11 @@
 package ForestLive;
 
 class Predator extends Animal {
-
-    private int kal = 100;
     private int ves;
-    public int getKal() {
-        return kal;
-    }
     public void setVes(int ves) {
         this.ves = ves;
     }
+
     public int getVes() {
         return ves;
     }
@@ -37,6 +33,6 @@ class Predator extends Animal {
     }
 
     public boolean eat(Essens Eater, Essens food) {
-       return false;
+        return false;
     }
 }

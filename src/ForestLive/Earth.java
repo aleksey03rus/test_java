@@ -5,23 +5,27 @@ import java.util.ArrayList;
 public class Earth {
     public static void main(String[] args) {
         ArrayList<Essens> arrayList = new ArrayList<>();
-        Bear bear = new Bear();
-        Elk elk = new Elk();
-        Rabbit rabbit = new Rabbit();
-        Plant plant = new Plant();
-        Wolf wolf = new Wolf();
         Predator fox = new Predator();
-        arrayList.add(0, bear);
-        arrayList.add(1, elk);
-        arrayList.add(2, rabbit);
-        arrayList.add(3, wolf);
-        arrayList.add(4, plant);
-        fox.setVes(100);
-        System.out.println(fox.getVes());
-        bear.setVes(555);
-        System.out.println(bear.getVes());
+        Predator bear = new Predator();
+        Herbivore elk = new Herbivore();
+        Plant plant = new Plant();
+        Plant plant2 = new Plant();
 
-        if (arrayList.get(0) instanceof Bear) {
+        fox.setVes(30);
+        bear.setVes(500);
+        elk.setKal(100);
+
+        arrayList.add(0, fox);
+        arrayList.add(1, bear);
+        arrayList.add(2, elk);
+        arrayList.add(3, plant);
+        arrayList.add(4, plant2);
+
+        System.out.println("ves fox= "+fox.getVes());
+        System.out.println("ves bear= "+bear.getVes());
+        System.out.println("kalorii losyashi="+elk.getKal());
+
+        if (arrayList.get(0) instanceof Predator) {
             if (bear.attack(arrayList.get(0), arrayList.get(3))){
 
             }
