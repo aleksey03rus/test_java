@@ -1,15 +1,6 @@
 package ForestLive;
 
 class Predator extends Animal {
-    private int ves;
-    public void setVes(int ves) {
-        this.ves = ves;
-    }
-
-    public int getVes() {
-        return ves;
-    }
-
     public boolean defense() {
         return Math.random() < 0.33 ? true : false;
     }

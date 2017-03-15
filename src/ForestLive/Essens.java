@@ -8,16 +8,15 @@ abstract class Essens {
         return kal;
     }
 
+    public void setKal(int kal) {
+        this.kal = kal;
+    }
+
     public int getVes() {
-        return kal;
+        return ves;
     }
 
     public void setVes(int ves) {
         this.ves = ves;
     }
-
-    public void setKal(int kal) {
-        this.kal = kal;
-    }
-
 }
