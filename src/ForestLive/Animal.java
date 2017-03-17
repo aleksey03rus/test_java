@@ -1,5 +1,4 @@
 package ForestLive;
 
-abstract class Animal extends Alive {
-
+abstract class Animal extends Essens {
 }

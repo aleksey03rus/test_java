@@ -1,5 +1,5 @@
 package ForestLive;
 
-class Plant extends Alive {
+class Plant extends NotAlive {
 
 }
