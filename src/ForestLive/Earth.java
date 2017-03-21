@@ -38,13 +38,9 @@ public class Earth {
                         arrayList.remove(arrayList.get(randElement2));
                     }
                 }
-
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-
         }
-
-
     }
 }
