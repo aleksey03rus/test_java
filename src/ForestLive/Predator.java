@@ -1,12 +1,20 @@
 package ForestLive;
 
+import java.util.ArrayList;
+
 class Predator extends Animal {
 
-    Predator(int ves){
+    public void food() {
+        ArrayList food = new ArrayList<>(3);
+        food.add(Predator.class);
+        food.add(Herbivore.class);
+        food.add(Garbage.class);
+    }
+
+    Predator(String name, int ves) {
+        setName(name);
         setVes(ves);
         setKal(100);
-    }
-    public boolean defense() {
-        return Math.random() < 0.33 ? true : false;
+
     }
 }

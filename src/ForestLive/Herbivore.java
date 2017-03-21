@@ -1,11 +1,15 @@
 package ForestLive;
 
+import java.util.ArrayList;
+
 class Herbivore extends Animal {
-Herbivore(){
+Herbivore(String name){
+    setName(name);
     setKal(50);
+    ArrayList food = new ArrayList<>(3);
+    food.add(Plant.class);
+    food.add(Garbage.class);
 }
 
-    public boolean Hide() {
-        return Math.random() < 0.5 ? true : false;
-    }
+
 }
