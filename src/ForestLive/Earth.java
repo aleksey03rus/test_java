@@ -10,22 +10,25 @@ public class Earth {
         ArrayList<Essens> arrayList = new ArrayList<>();
         arrayList.add(new Predator("bear1", 300));
         arrayList.add(new Predator("bear2", 351));
-        arrayList.add(new Predator("bear2", 352));
-        arrayList.add(new Predator("bear2", 353));
+        arrayList.add(new Predator("bear3", 352));
+        arrayList.add(new Predator("bear4", 353));
         arrayList.add(new Herbivore("Elk"));
+        arrayList.add(new Herbivore("Elk1"));
+        arrayList.add(new Herbivore("Elk2"));
+        arrayList.add(new Herbivore("Elk3"));
+        arrayList.add(new Plant("Oduvan"));
+        arrayList.add(new Plant("Oduvan1"));
+        arrayList.add(new Plant("Oduvan2"));
+        arrayList.add(new Plant("Oduvan3"));
+        arrayList.add(new Plant("Oduvan4"));
         arrayList.add(new Garbage());
         arrayList.add(new Garbage());
         arrayList.add(new Garbage());
         arrayList.add(new Garbage());
         arrayList.add(new Garbage());
         arrayList.add(new Garbage());
-        arrayList.add(new Plant("Elk"));
 
-
-
-        while (!(arrayList.size() ==1)) {
-
-            try {
+        while (!arrayList.get(0).closeProc(arrayList)){
                 int randElement = (int) (Math.random() * (arrayList.size()));
                 int randElement2 = (int) (Math.random() * (arrayList.size()));
                 while (randElement == randElement2) {
@@ -34,13 +37,14 @@ public class Earth {
                 if (arrayList.get(randElement) instanceof Predator || arrayList.get(randElement) instanceof Herbivore) {
                     if (arrayList.get(randElement).eat(arrayList.get(randElement2))) {
 
-                        System.out.println(arrayList.get(randElement)+" Eater   food " +arrayList.get(randElement2)+", sizeMass=" +arrayList.size());
+                        System.out.println("Eater  "+arrayList.get(randElement).getClass().getName() + "  food " + arrayList.get(randElement2) + ", sizeMass=" + arrayList.size());
                         arrayList.remove(arrayList.get(randElement2));
                     }
                 }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
+        }
+        System.out.println(arrayList.size());
+        for (int i=0; i<arrayList.size();i++){
+            System.out.println(arrayList.get(i).getName()+" - " +arrayList.get(i).getVes());
         }
     }
 }
