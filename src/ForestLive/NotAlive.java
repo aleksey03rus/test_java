@@ -1,4 +1,4 @@
 package ForestLive;
 
-public class NotAlive extends Essens {
+public abstract class NotAlive extends Essens {
 }

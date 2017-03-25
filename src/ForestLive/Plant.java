@@ -5,4 +5,13 @@ class Plant extends NotAlive {
         setName(name);
     }
 
+    @Override
+    public String toString() {
+        return "Plant{}";
+    }
+
+    @Override
+    public boolean eat(Essens essens) {
+        return false;
+    }
 }

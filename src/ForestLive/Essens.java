@@ -7,14 +7,6 @@ abstract class Essens {
     private int ves;
     private String name;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
     public int getKal() {
         return kal;
     }
@@ -31,8 +23,16 @@ abstract class Essens {
         this.ves = ves;
     }
 
-    public boolean attack(Essens two) {
-        return this.getVes() > two.getVes() ? true : false;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean attack(Essens essens) {
+        return this.getVes() > essens.getVes() ? true : false;
     }
 
 
@@ -47,55 +47,28 @@ abstract class Essens {
         return false;
     }
 
-    public boolean eat(Essens essens) {
-        if (this instanceof Predator) {
-            if (essens instanceof Predator) {
-                if (this.attack(essens)) {
-                    return true;
-                }
-            } else {
-                if (essens instanceof Herbivore) {
-                    if (this.ability(essens)) {
-                        return true;
-                    }
-                } else {
-                    if (essens instanceof Garbage) {
-                        return true;
-                    }
-                }
-            }
-        } else {
-            if (this instanceof Herbivore) {
-                return ((essens instanceof Plant) || essens instanceof Garbage) ? true : false;
-            }
-        }
-        return false;
+    public abstract boolean eat(Essens essens);
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Essens essens = (Essens) o;
+
+        if (kal != essens.kal) return false;
+        if (ves != essens.ves) return false;
+        return name != null ? name.equals(essens.name) : essens.name == null;
+
     }
 
-    public boolean closeProc(ArrayList<Essens> arrayList) {
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i).getClass().getName() == Predator.class.getName()) {
-                for (int j = i + 1; j < arrayList.size(); j++) {
-                    if (arrayList.get(j).getClass().getName() == Herbivore.class.getName() ||
-                            arrayList.get(j).getClass().getName() == Garbage.class.getName() ||
-                            arrayList.get(j).getClass().getName() == Predator.class.getName()) {
-                        return false;
-                    }
-
-                }
-            } else {
-                if (arrayList.get(i).getClass().getName() == Herbivore.class.getName()) {
-                    for (int j = i + 1; j < arrayList.size(); j++) {
-                        if (arrayList.get(j).getClass().getName() == Plant.class.getName() ||
-                                arrayList.get(j).getClass().getName() == Garbage.class.getName()) {
-                            return false;
-                        }
-
-                    }
-                }
-            }
-
-        }
-        return true;
+    @Override
+    public int hashCode() {
+        int result = kal;
+        result = 31 * result + ves;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
     }
+
+
 }
